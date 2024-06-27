@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BlgAdapter(var contactList:List<Blgr>):RecyclerView.Adapter<BlogsViewHolder>() {
+class BlgAdapter(var authorList:List<Blgr>):RecyclerView.Adapter<BlogsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlogsViewHolder {
         var itemView=LayoutInflater.from(parent.context).inflate(R.layout.authors_profile_blog,parent,false)
         return BlogsViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        return contactList.size
+        return authorList.size
     }
 
     override fun onBindViewHolder(holder: BlogsViewHolder, position: Int) {
-        val contact=contactList[position]
-        holder.tvDate.text=contact.publishDate
-        holder.tvTitle.text=contact.title
-        holder.tvName.text=contact.author
+        val author=authorList[position]
+        holder.tvDate.text=author.publishDate
+        holder.tvTitle.text=author.title
+        holder.tvName.text=author.author
     }
 
 }
